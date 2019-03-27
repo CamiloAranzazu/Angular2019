@@ -1,0 +1,67 @@
+<h3>Pipes</h3>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">Variable</th>
+            <th scope="col">Pipe</th>
+            <th scope="col">Resultado del Variable/Pipes</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{nombre}}</td>
+            <td>uppercase</td>
+            <td>{{nombre | uppercase}}</td>
+        </tr>
+        <tr>
+            <td>{{nombre}}</td>
+            <td>lowercase</td>
+            <td>{{nombre | lowercase}}</td>
+        </tr>
+        <tr>
+            <td>{{nombre}}</td>
+            <td>slice:3</td>
+            <td>{{nombre | slice:3}}</td>
+        </tr>
+        <tr>
+            <td>{{nombre}}</td>
+            <td>slice:0:3</td>
+            <td>{{nombre | slice:0:3}}</td>
+        </tr>
+        <tr>
+            <td>{{arreglo}}</td>
+            <td>slice:0:5</td>
+            <td>{{arreglo | slice:0:5}}</td>
+        </tr>
+        <tr>
+            <td>{{pi}}</td>
+            <td>number:'1.0-5'</td>
+            <td>{{pi | number:'1.0-5'}}</td>
+        </tr>
+        <tr>
+            <td>{{porcentaje}}</td>
+            <td>percent</td>
+            <td>{{porcentaje | percent}}</td>
+        </tr>
+        <tr>
+            <td>{{pipesPersonalisados}}</td>
+            <td> personalizados</td>
+            <td>{{pipesPersonalisados}}</td>
+        </tr>
+    </tbody>
+</table>
+<h3>Pipe: Slice</h3>
+<ul>
+    <li *ngFor="let item of arreglo | slice:0:5">{{ item }}</li>
+</ul>
+<h3>Pipe: Json</h3>
+<pre>
+  {{json | json}}
+</pre>
+<h3>Pipe: Promesas</h3>
+<!-- <pre> Version Json
+  {{promesa | json}}
+</pre> -->
+<pre> Version Async
+    {{promesa | async}}
+ </pre>

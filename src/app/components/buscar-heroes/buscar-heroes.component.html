@@ -1,0 +1,8 @@
+<h3>Buscador:<small> {{termino}}</small></h3>
+<hr>
+<div *ngIf="heroes.length === 0" class="alert alert-info" role="alert">
+    No existen resultados con el termino: {{termino}}
+</div>
+<div class="card-columns">
+    <app-heroe-tarjeta [heroe]="heroe" [index]="heroe.id" *ngFor="let heroe of heroes"></app-heroe-tarjeta>
+</div>

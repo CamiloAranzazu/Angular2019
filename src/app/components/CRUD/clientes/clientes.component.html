@@ -1,0 +1,45 @@
+<h2>Usuarios</h2>
+<hr>
+<div class="row animated fadeIn fast">
+    <div class="col-md-12 text-right">
+        <button (click)="crearUsuario()" type="button" class="btn btn-outline-success">Crear Usuario</button>
+    </div>
+</div>
+<br>
+
+<div class="row animated fadeIn fast">
+    <div class="col-md-12">
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr class="text-center">
+                        <th>key</th>
+                        <th>Nombre</th>
+                        <th>Genero</th>
+                        <th>Edad</th>
+                        <th>Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let k of clientes | keys; let i = index" class="text-center">
+                        <td>{{ i + 1 }}</td>
+                        <td>{{ clientes[k].Nombre }}</td>
+                        <td>{{ clientes[k].Genero }}</td>
+                        <td>{{ clientes[k].Edad }}</td>
+                        <td style="width: 20%">
+                            <button [routerLink]="['/cliente',k]" type="button" class="btn btn-outline-success">Editar</button>
+                            <button (click)="EliminarCiente(k)" type="button" class="btn btn-outline-danger">Eliminar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div *ngIf="( clientes | keys).length === 0 && !cargandoInformacion" class="alert alert-info" role="alert">
+                No existen registros
+            </div>
+            <button *ngIf="cargandoInformacion" class="btn btn-primary" type="button" disabled>
+                <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                Cargando Información...
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+<div class="card animated fadeIn fast">
+    <img [src]="heroe.img" class="card-img-top " [alt]="heroe.nombre">
+    <div class="card-body ">
+        <h5 class="card-title ">{{ heroe.nombre | uppercase }}</h5>
+        <p class="card-text ">{{heroe.bio}}</p>
+        <p class="card-text "><small class="text-muted ">{{heroe.aparicion | date:'y'}} - {{heroe.casa}}</small></p>
+        <button (click)="goHeroe()" class="btn btn-outline-success my-2 my-sm-0 btn-block " type="submit ">Var más..</button>
+        <!-- <a href="" class="btn btn-outline-success my-2 my-sm-0 btn-block " [routerLink]="['/heroe', i]">Var más..</a> -->
+    </div>
+</div>

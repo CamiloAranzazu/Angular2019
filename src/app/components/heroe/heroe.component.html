@@ -1,0 +1,7 @@
+<div class="jumbotron">
+    <h1 class="display-4">{{heroe.nombre | uppercase}} ({{heroe.aparicion | date:'y'}})</h1>
+    <p class="lead">{{heroe.bio}}</p>
+    <hr class="my-4">
+    <p>{{heroe.casa}} </p>
+    <a href="" class="btn btn-outline-success my-2 my-sm-0 btn-block " [routerLink]="['/heroes']">Heroes</a>
+</div>
